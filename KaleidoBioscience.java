@@ -15,18 +15,14 @@ public class KaleidoBioscience {
 		// TODO Auto-generated method stub
 		
 		KaleidoBioscience kb =new KaleidoBioscience();
-		int q =06122104;
+		int q =1;
 		kb.uniqueIdgenerator(q);
-	 // System.out.println("The Id is :"+q+"\n"+"Output is :"+result);
+	
         
 	}
 
 	@SuppressWarnings({ "unchecked", "rawtypes" }) 
 	private String uniqueIdgenerator(int q) {
-		
-		 
-		 String valans="";
-
 		if(q==0 || q < 0 ||q>Integer.MAX_VALUE ||q<Integer.MIN_VALUE)
 			return String.valueOf(q);
 		
@@ -55,8 +51,8 @@ public class KaleidoBioscience {
 		   
 		      if( hpans.containsKey(q))
 		         {
-		          // System.out.println("The ID is already in records");
-		           valans= hpans.get(q);
+		         
+		            hpans.get(q);
 		          
 		         }
 		      else
@@ -103,14 +99,13 @@ public class KaleidoBioscience {
 	       
 	        		e.printStackTrace();
 	        	}
-	        
 	        }
 	        
 	        else
 	        {
 	        	firsttimeentry(q,hpans);
 	        }
-	   //     System.out.println("The Id is :"+q+"The Value is :"+hpans.get(q));
+	 
 	        
 }
 
