@@ -9,21 +9,20 @@ import java.io.OutputStream;
 import java.util.*;
 
 public class KaleidoBioscience {
-
+ 
 	public static void main(String[] args) {
 		
 		// TODO Auto-generated method stub
 		
 		KaleidoBioscience kb =new KaleidoBioscience();
-		int q =989759;
-		Hashtable<Integer,String> hp=new Hashtable<>();
-		String result=kb.uniqueIdgenerator(q,hp);
-	    System.out.println("The Id is :"+q+"The Value is :"+result);
-
+		int q =06122104;
+		kb.uniqueIdgenerator(q);
+	 // System.out.println("The Id is :"+q+"\n"+"Output is :"+result);
+        
 	}
 
-	@SuppressWarnings({ "unchecked", "rawtypes" })
-	private String uniqueIdgenerator(int q,Hashtable<Integer,String> hp) {
+	@SuppressWarnings({ "unchecked", "rawtypes" }) 
+	private String uniqueIdgenerator(int q) {
 		
 		 
 		 String valans="";
@@ -36,26 +35,27 @@ public class KaleidoBioscience {
 			//Source referred-https://beginnersbook.com/2013/12/how-to-serialize-hashmap-in-java/
 			 try
 		      {
-		         FileInputStream fis = new FileInputStream("C:/Users/Vidya/Desktop/Challenge1/test1.ser");
-		         ObjectInputStream ois = new ObjectInputStream(fis);
-		        hpans  = (Hashtable<Integer, String>) ois.readObject();
-		         ois.close();
-		         fis.close();
-		      }catch(IOException e)
+		         FileInputStream filein = new FileInputStream("C:/Users/Vidya/Desktop/Challenge1/test1.ser");
+		         ObjectInputStream fileob = new ObjectInputStream(filein);
+		        hpans  = (Hashtable<Integer, String>) fileob.readObject();
+		        fileob.close();
+		         filein.close();
+		      }
+			 catch(IOException e)
 		      {
 		         e.printStackTrace();
 		       
-		      }catch(ClassNotFoundException c)
+		      }
+			 catch(ClassNotFoundException c)
 		      {
 		        
 		         c.printStackTrace();
 		        
 		      }
-		    
 		   
 		      if( hpans.containsKey(q))
 		         {
-		           System.out.println("The ID is already in records");
+		          // System.out.println("The ID is already in records");
 		           valans= hpans.get(q);
 		          
 		         }
@@ -64,12 +64,8 @@ public class KaleidoBioscience {
 		        	  firsttimeentry(q,hpans);
 		         }
 		          
-		      
-		         
-		      return valans; 
-		       
-		        
-		
+		     System.out.println("The Id is :"+q+"\n"+"The Value is :"+hpans.get(q));  
+		      return "";        
 	}
 	       
 	    public void firsttimeentry(int q,Hashtable<Integer,String> hpans)
@@ -82,11 +78,10 @@ public class KaleidoBioscience {
 	        {
 	       
 	        	int randomnumber=randomNumberinRanger(100,99999);
-	        
 	        	String randans=Integer.toString(randomnumber);
 	        	String answer=ch+randans;
 	        	int anslength=answer.length();
-	        	if(anslength>=3 || anslength<7)
+	        	if(anslength>3 || anslength<7)
 	        	{
 	        	hpans.put(q, answer);
 	        	}
@@ -97,7 +92,7 @@ public class KaleidoBioscience {
 	        	//Source referred-https://beginnersbook.com/2013/12/how-to-serialize-hashmap-in-java/
 	        	try 
 	        	{
-	        		OutputStream fileans = new FileOutputStream("C:/Users/Vidya/Desktop/Challenge1/test1.ser");
+	        	    OutputStream fileans = new FileOutputStream("C:/Users/Vidya/Desktop/Challenge1/test1.ser");
 	                ObjectOutputStream outans = new ObjectOutputStream(fileans);
 	                outans.writeObject(hpans);
 	                outans.close();
@@ -115,7 +110,8 @@ public class KaleidoBioscience {
 	        {
 	        	firsttimeentry(q,hpans);
 	        }
-		
+	   //     System.out.println("The Id is :"+q+"The Value is :"+hpans.get(q));
+	        
 }
 
 	private boolean checkAlpha(char ch) {
