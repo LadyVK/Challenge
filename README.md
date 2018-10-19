@@ -23,3 +23,5 @@ No null key will be allowed to stored ,so you have to given an input id to eithe
 The Id to be stored wont take zero ,negative number and number greater than Integer.maxValue and less than integer.minValue.
 
 The output id will be 4 -6 characters ,where the first character is a letter(not a vowel) and rest all are numbers.
+
+Certain code references have be taken for example ,how to serialize the data and how to generate random numbers in particular range and it is been mentioned in the comments section respectively.
