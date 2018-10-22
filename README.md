@@ -13,7 +13,7 @@ Input: 2
 ID Output: K3B1
 
 
-This file is a java file and can be run on editor (Eclipse IDE,Netbeans) and on Windows machine.
+This file is a kaleidoversion2 java file and can be run on editor (Eclipse IDE,Netbeans) and on Windows machine.
 
 
 
