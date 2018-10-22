@@ -15,13 +15,13 @@ ID Output: K3B1
 
 This file is a java file and can be run on editor (Eclipse IDE,Netbeans) and on Windows machine.
 
-The address of the file where data needs to be stored should be manually set(which for time being can be the desktop location/or the server ,wherever you need to store the file) .
+
 
 Certain assumptions-
 No null key will be allowed to stored ,so you have to given an input id to either retrieve the output and store the output(if you are entering it first time)
 
 The Id to be stored wont take zero ,negative number and number greater than Integer.maxValue and less than integer.minValue.
 
-The output id will be 4 -6 characters ,where the first character is a letter(not a vowel) and rest all are numbers.
+The output id will be 4 -6 characters ,where the first character is a letter(not a vowel) .
 
-Certain code references have be taken for example ,how to serialize the data and how to generate random numbers in particular range and it is been mentioned in the comments section respectively.
+
